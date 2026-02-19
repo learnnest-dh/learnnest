@@ -1,59 +1,68 @@
 // Study Planner
 function addTask() {
-  let input = document.getElementById("taskInput");
-  let task = input.value.trim();
-  if (task === "") return;
+  const input = document.getElementById("taskInput");
+  const taskList = document.getElementById("taskList");
 
-  let li = document.createElement("li");
-  li.textContent = task;
+  if (input.value === "") return;
+
+  const li = document.createElement("li");
+  li.textContent = input.value;
   li.onclick = function() {
     li.style.textDecoration = "line-through";
-    li.style.opacity = "0.6";
   };
 
-  document.getElementById("taskList").appendChild(li);
+  taskList.appendChild(li);
   input.value = "";
 }
 
-// Timer
+// Exam Countdown
+function calculateCountdown() {
+  const examDate = new Date(document.getElementById("examDate").value);
+  const today = new Date();
+  const difference = examDate - today;
+
+  const days = Math.ceil(difference / (1000 * 60 * 60 * 24));
+
+  if (days > 0) {
+    document.getElementById("countdown").textContent =
+      days + " days left until your exam!";
+  } else {
+    document.getElementById("countdown").textContent =
+      "Exam day has arrived!";
+  }
+}
+
+// Pomodoro Timer
 let time = 1500;
-let interval;
+let timerInterval;
 
 function startTimer() {
-  clearInterval(interval);
-  interval = setInterval(() => {
+  if (timerInterval) return;
+
+  timerInterval = setInterval(() => {
     if (time <= 0) {
-      clearInterval(interval);
-      alert("Time's up! Take a break 🌿");
+      clearInterval(timerInterval);
+      timerInterval = null;
+      alert("Time's up! Take a break.");
       return;
     }
+
     time--;
-    let m = Math.floor(time / 60);
-    let s = time % 60;
-    document.getElementById("timer").innerText =
-      m + ":" + (s < 10 ? "0" : "") + s;
+    updateTimerDisplay();
   }, 1000);
 }
 
 function resetTimer() {
-  clearInterval(interval);
+  clearInterval(timerInterval);
+  timerInterval = null;
   time = 1500;
-  document.getElementById("timer").innerText = "25:00";
+  updateTimerDisplay();
 }
 
-// Exam Countdown
-function setCountdown() {
-  let examDate = new Date(document.getElementById("examDate").value);
-  let today = new Date();
-  let diff = examDate - today;
+function updateTimerDisplay() {
+  const minutes = Math.floor(time / 60);
+  const seconds = time % 60;
 
-  if (diff <= 0) {
-    document.getElementById("countdownDisplay").innerText =
-      "Exam date already passed!";
-    return;
-  }
-
-  let days = Math.ceil(diff / (1000 * 60 * 60 * 24));
-  document.getElementById("countdownDisplay").innerText =
-    days + " days left until your exam!";
+  document.getElementById("timer").textContent =
+    minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
 }
