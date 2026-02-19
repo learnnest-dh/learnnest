@@ -90,3 +90,21 @@ button:hover {
 .links a:hover {
   color: #74c69d;
 }
+.class-dropdown select {
+  padding: 10px 14px;
+  border-radius: 30px;
+  border: 1px solid #dcdcdc;
+  background: #f8f9fa;
+  font-size: 14px;
+  outline: none;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.class-dropdown select:hover {
+  background: #eef2f7;
+}
+
+.notes-frame {
+  margin-top: 20px;
+}
