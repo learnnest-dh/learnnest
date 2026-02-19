@@ -1,32 +1,53 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Study Buddy</title>
+  <title>Learnnest</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h1>📚 Study Buddy</h1>
+<header>
+  <h1>Learnnest</h1>
+  <p>Plan smart. Focus deep. Grow daily.</p>
+</header>
 
-<h2>Study Planner</h2>
-<input id="task" placeholder="Enter study task">
-<button onclick="addTask()">Add</button>
-<ul id="list"></ul>
+<div class="container">
 
-<h2>Notes</h2>
-<textarea id="notes" placeholder="Write notes here..."></textarea>
+  <!-- Study Planner -->
+  <section>
+    <h2>📚 Study Planner</h2>
+    <div class="task-input">
+      <input id="taskInput" placeholder="Enter study task...">
+      <button onclick="addTask()">Add</button>
+    </div>
+    <ul id="taskList"></ul>
+  </section>
 
-<h2>Timer</h2>
-<div id="timer">25:00</div>
-<button onclick="startTimer()">Start</button>
-<button onclick="resetTimer()">Reset</button>
+  <!-- Class Schedule -->
+  <section>
+    <h2>🗓 Class Schedule</h2>
+    <textarea id="scheduleArea" placeholder="Example:
+Monday - Math 4pm
+Tuesday - Physics 5pm"></textarea>
+  </section>
 
-<h2>Useful Links</h2>
-<ul>
-  <li><a href="https://www.khanacademy.org" target="_blank">Khan Academy</a></li>
-  <li><a href="https://www.youtube.com" target="_blank">YouTube Study</a></li>
-</ul>
+  <!-- Exam Countdown -->
+  <section>
+    <h2>⏳ Exam Countdown</h2>
+    <input type="date" id="examDate">
+    <button onclick="setCountdown()">Set Exam</button>
+    <p id="countdownDisplay"></p>
+  </section>
 
-<script src="script.js"></script>
-</body>
-</html>
+  <!-- Notes -->
+  <section>
+    <h2>📝 Notes</h2>
+    <textarea id="notesArea" placeholder="Write your notes here..."></textarea>
+  </section>
+
+  <!-- Pomodoro Timer -->
+  <section>
+    <h2>⏱ Focus Timer</h2>
+    <div id="timer">25:00</div>
+    <div class="timer-buttons">
+      <button onclick="startTim
