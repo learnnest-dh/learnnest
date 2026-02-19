@@ -66,3 +66,15 @@ function updateTimerDisplay() {
   document.getElementById("timer").textContent =
     minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
 }
+function loadClassNotes() {
+  const selected = document.getElementById("classSelect").value;
+  const frame = document.getElementById("notesFrame");
+
+  if (selected === "9") {
+    frame.src = "https://drive.google.com/embeddedfolderview?id=1oJt1VXMvzBLSVMP3yTRL5G-innQpodzE#grid";
+  } else if (selected === "10") {
+    frame.src = "https://drive.google.com/embeddedfolderview?id=19QRxbgZ2RFMKwHYCHf6qFifp1xK0SGA1#grid";
+  } else {
+    frame.src = "";
+  }
+}
