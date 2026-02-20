@@ -1,73 +1,57 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Learnnest</title>
+  <title>LearnNest</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-  <h1>Learnnest</h1>
-  <p>Plan smart. Focus deep. Grow daily.</p>
-</header>
+<div class="app">
 
-<div class="container">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="logo">LearnNest</div>
 
-  <!-- Study Planner -->
-  <section>
-    <h2>📚 Study Planner</h2>
-    <div class="task-input">
-      <input id="taskInput" placeholder="Enter study task...">
-      <button onclick="addTask()">Add</button>
+    <nav>
+      <button onclick="showSection('home')">Home</button>
+      <button onclick="showSection('notes')">Notes</button>
+      <button onclick="showSection('library')">Library</button>
+      <button onclick="showSection('pomodoro')">Pomodoro</button>
+      <button onclick="showSection('habits')">Habits</button>
+    </nav>
+
+    <div class="mode-toggle">
+      <button onclick="toggleMode()">🌙</button>
     </div>
-    <ul id="taskList"></ul>
-  </section>
+  </aside>
 
-  <!-- Class Schedule -->
-  <section>
-    <h2>🗓 Class Schedule</h2>
-    <textarea id="scheduleArea" placeholder="Example:
-Monday - Math 4pm
-Tuesday - Physics 5pm"></textarea>
-  </section>
+  <!-- Main Content -->
+  <main class="content">
 
-  <!-- Exam Countdown -->
-  <section>
-    <h2>⏳ Exam Countdown</h2>
-    <input type="date" id="examDate">
-    <button onclick="setCountdown()">Set Exam</button>
-    <p id="countdownDisplay"></p>
-  </section>
+    <section id="home" class="section active">
+      <h1>Home Dashboard</h1>
+    </section>
 
-  <!-- Notes -->
-  <section>
-    <h2>📝 Notes</h2>
-    <textarea id="notesArea" placeholder="Write your notes here..."></textarea>
-  </section>
+    <section id="notes" class="section">
+      <h1>Notes</h1>
+    </section>
 
-  <!-- Pomodoro Timer -->
-  <section>
-    <h2>⏱ Focus Timer</h2>
-    <div id="timer">25:00</div>
-    <div class="timer-buttons">
-      <button onclick="startTim
-<section>
-  <h2>CLASS</h2>
+    <section id="library" class="section">
+      <h1>Library</h1>
+    </section>
 
-  <div class="class-dropdown">
-    <select id="classSelect" onchange="loadClassNotes()">
-      <option value="">Select Class</option>
-      <option value="9">Class 9</option>
-      <option value="10">Class 10</option>
-    </select>
-  </div>
+    <section id="pomodoro" class="section">
+      <h1>Pomodoro</h1>
+    </section>
 
-  <div class="notes-frame">
-    <iframe id="notesFrame"
-      src=""
-      width="100%"
-      height="500"
-      style="border:none; border-radius:16px;">
-    </iframe>
-  </div>
-</section>
+    <section id="habits" class="section">
+      <h1>Habit Tracker</h1>
+    </section>
+
+  </main>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
