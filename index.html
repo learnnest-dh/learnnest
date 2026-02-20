@@ -1,3 +1,84 @@
 <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<section id="home" class="section active">
+
+  <!-- Banner -->
+  <div class="section-banner home-banner">
+    <div>
+      <h1>🏠 LearnNest Dashboard</h1>
+      <p>Your academic overview and productivity</p>
+    </div>
+  </div>
+
+  <!-- Body -->
+  <div class="section-body">
+
+    <!-- Large Search Bar -->
+    <div class="home-search">
+      <input type="text" id="searchInput" placeholder="Search notes, questions, and resources…" />
+      <button onclick="performSearch()">Search</button>
+    </div>
+
+    <!-- Motivational Quote -->
+    <div class="daily-quote">
+      <p id="dailyQuote">“Focus on what matters today, and everything else will follow.”</p>
+    </div>
+
+    <!-- Quick Buttons Row -->
+    <div class="quick-buttons">
+      <button onclick="goToSection('notes')">📄 Notes</button>
+      <button onclick="goToSection('studyPlanner')">📝 Study Planner</button>
+      <button onclick="goToSection('pomodoro')">⏱ Pomodoro</button>
+      <button onclick="goToSection('habits')">🌿 Habits</button>
+      <button onclick="goToSection('library')">📚 Library</button>
+    </div>
+
+    <!-- Stats Cards Grid -->
+    <div class="home-grid">
+
+      <!-- Countdown Card -->
+      <div class="home-card">
+        <div class="card-header">
+          <h2>📅 Next Exam</h2>
+        </div>
+        <p id="countdownBig">Loading…</p>
+      </div>
+
+      <!-- Habit Progress Card -->
+      <div class="home-card">
+        <div class="card-header">
+          <h2>🌿 Habit Progress</h2>
+        </div>
+        <div class="progress-container">
+          <svg class="progress-ring" width="120" height="120">
+            <circle class="progress-ring-bg" cx="60" cy="60" r="50" />
+            <circle class="progress-ring-fill" cx="60" cy="60" r="50" id="progressCircle" />
+          </svg>
+          <div class="progress-text" id="habitPercentBig">0%</div>
+        </div>
+      </div>
+
+      <!-- Streak Card -->
+      <div class="home-card">
+        <div class="card-header">
+          <h2>🔥 Streaks</h2>
+        </div>
+        <p id="streakBig">0 days</p>
+      </div>
+
+      <!-- Q&A Feed Card -->
+      <div class="home-card home-card-wide">
+        <div class="card-header">
+          <h2>❓ Q&A</h2>
+        </div>
+        <input type="text" id="questionInput" placeholder="Ask anything…">
+        <button onclick="postQuestion()">Post</button>
+        <ul id="questionList"></ul>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
