@@ -23,3 +23,15 @@ function updateCountdown() {
 
 setInterval(updateCountdown, 1000);
 updateCountdown();
+function updateHabitProgress(percent) {
+  const circle = document.getElementById("progressCircle");
+  const text = document.getElementById("habitPercent");
+
+  const radius = 50;
+  const circumference = 2 * Math.PI * radius;
+
+  const offset = circumference - (percent / 100) * circumference;
+
+  circle.style.strokeDashoffset = offset;
+  text.innerText = percent + "%";
+}
