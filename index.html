@@ -36,7 +36,58 @@
     </div>
   </div>
 
-  <div class="section-body">
+  <div class="home-grid">
+
+  <!-- Countdown Card -->
+  <div class="home-card">
+    <div class="card-header">
+      <h2>📅 Next Exam</h2>
+    </div>
+    <p id="countdownBig">Loading…</p>
+  </div>
+
+  <!-- Habit Progress Card -->
+  <div class="home-card">
+    <div class="card-header">
+      <h2>🌿 Habit Progress</h2>
+    </div>
+    <div class="progress-container">
+      <svg class="progress-ring" width="120" height="120">
+        <circle class="progress-ring-bg" cx="60" cy="60" r="50" />
+        <circle class="progress-ring-fill" cx="60" cy="60" r="50" id="progressCircle" />
+      </svg>
+      <div class="progress-text" id="habitPercentBig">0%</div>
+    </div>
+  </div>
+
+  <!-- Streak Card -->
+  <div class="home-card">
+    <div class="card-header">
+      <h2>🔥 Streaks</h2>
+    </div>
+    <p id="streakBig">0 days</p>
+  </div>
+
+  <!-- Search Card -->
+  <div class="home-card home-card-wide">
+    <div class="card-header">
+      <h2>🔍 Search</h2>
+    </div>
+    <input type="text" id="searchInput" placeholder="Search notes, questions…">
+  </div>
+
+  <!-- Q&A Feed Card -->
+  <div class="home-card home-card-wide">
+    <div class="card-header">
+      <h2>❓ Q&A</h2>
+    </div>
+    <input type="text" id="questionInput" placeholder="Ask anything…">
+    <button onclick="postQuestion()">Post</button>
+    <ul id="questionList"></ul>
+  </div>
+
+</div>
+
     <div class="card">
   <h2>📅 Next Exam Countdown</h2>
   <p id="countdown"></p>
